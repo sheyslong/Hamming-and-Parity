@@ -10,7 +10,7 @@ def verifyBinary(binary):
     
     return False
 
-def paridade(binary):
+def parity(binary):
     count = 0
     for bit in binary:
         if bit == '1':
@@ -28,7 +28,7 @@ def main(binary_receiver):
     binary_receiver = creatingList(binary_receiver)
     parity_receiver = binary_receiver[0]
     new_binary_receiver = removeParity(binary_receiver)
-    new_parity_receiver = paridade(new_binary_receiver)
+    new_parity_receiver = parity(new_binary_receiver)
 
     if(new_parity_receiver == parity_receiver):
         return "Nenhum erro detectado"
@@ -36,7 +36,6 @@ def main(binary_receiver):
         return "Erro detectado"
 
 def Test():
-    #Test One
     binary_receiver_ok = ['101101011', '00101101', '00000', '1011111', '11111111']
     binary_receiver_err = ['101101001', '00101111', '100000', '1011110', '01111111']
 
@@ -44,8 +43,9 @@ def Test():
         print("\n" + binary_receiver_ok[i] + ": \n" + main(binary_receiver_ok[i]))
         print("\n" + binary_receiver_err[i] + ": \n" + main(binary_receiver_err[i]))
 
-    return 1    
-    
+    return 1
+
+print("##########################Teste de detecção de erro################################################\n")   
 Test()
 
 
